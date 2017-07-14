@@ -92,14 +92,27 @@ class RestaurantTableViewController: UITableViewController {
         optionMenu.addAction(callAction)
         
         // Check-in action
-        let checkInAction = UIAlertAction(title: "Check in", style: .default, handler: {
-            (action: UIAlertAction!) -> Void in
-            let cell = tableView.cellForRow(at: indexPath)
-            cell?.accessoryType = .checkmark
-            self.restaurantIsVisited[indexPath.row] = true
-        })
+        if restaurantIsVisited[indexPath.row] {
+            let undoAction = UIAlertAction(title: "Undo checkin", style: .default, handler: {
+                (action: UIAlertAction!) -> Void in
+                let cell = tableView.cellForRow(at: indexPath)
+                cell?.accessoryType = .none
+                self.restaurantIsVisited[indexPath.row] = false
+            })
+            
+            optionMenu.addAction(undoAction)
+        } else {
+            let checkInAction = UIAlertAction(title: "Check in", style: .default, handler: {
+                (action: UIAlertAction!) -> Void in
+                let cell = tableView.cellForRow(at: indexPath)
+                cell?.accessoryType = .checkmark
+                self.restaurantIsVisited[indexPath.row] = true
+            })
+            
+            optionMenu.addAction(checkInAction)
+        }
         
-        optionMenu.addAction(checkInAction)
+        
         
         // Present the whole option menu
         present(optionMenu, animated: true, completion: nil)
