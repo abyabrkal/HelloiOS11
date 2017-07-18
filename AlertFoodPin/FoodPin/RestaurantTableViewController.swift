@@ -149,11 +149,14 @@ class RestaurantTableViewController: UITableViewController {
         //Social Sharing Button
         let shareAction = UITableViewRowAction(style: UITableViewRowActionStyle.default, title: "Share", handler: {(action, indexPath) -> Void in
             
-            let defaultText = "Just checking in at " + self.restaurantNames[indexPath.row]
-            let activityController = UIActivityViewController(activityItems: [defaultText], applicationActivities: nil)
             
-            self.present(activityController, animated: true, completion: nil)
+            let defaultText = "#iOSdev #testing Just checking in at " + self.restaurantNames[indexPath.row]
             
+            if let imageToShare = UIImage(named: self.restaurantImages[indexPath.row]){
+                let activityController = UIActivityViewController(activityItems: [defaultText, imageToShare], applicationActivities: nil)
+                
+                self.present(activityController, animated: true, completion: nil)
+            }
             
         })
         
@@ -171,6 +174,11 @@ class RestaurantTableViewController: UITableViewController {
             self.tableView.deleteRows(at: [indexPath], with: .left)
         
         })
+        
+        //change cbg color of buttons
+        shareAction.backgroundColor = UIColor(red: 30/255, green: 144/255, blue: 255/255, alpha: 1)
+        deleteAction.backgroundColor = UIColor(red: 255/255, green: 99/255, blue: 71/255, alpha: 1)
+        
         
         //return an array of UITableViewRowAction
         return [deleteAction, shareAction]
