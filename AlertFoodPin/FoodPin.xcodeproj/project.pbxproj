@@ -7,6 +7,7 @@
 	objects = {
 
 /* Begin PBXBuildFile section */
+		405F550B1F1F3CBC0053EC40 /* RestaurantDetailViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 405F550A1F1F3CBC0053EC40 /* RestaurantDetailViewController.swift */; };
 		848CC4511F1246E5002D037C /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = 848CC4501F1246E5002D037C /* AppDelegate.swift */; };
 		848CC4561F1246E5002D037C /* Main.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 848CC4541F1246E5002D037C /* Main.storyboard */; };
 		848CC4581F1246E5002D037C /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 848CC4571F1246E5002D037C /* Assets.xcassets */; };
@@ -16,6 +17,7 @@
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
+		405F550A1F1F3CBC0053EC40 /* RestaurantDetailViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = RestaurantDetailViewController.swift; sourceTree = "<group>"; };
 		848CC44D1F1246E5002D037C /* FoodPin.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = FoodPin.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		848CC4501F1246E5002D037C /* AppDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppDelegate.swift; sourceTree = "<group>"; };
 		848CC4551F1246E5002D037C /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/Main.storyboard; sourceTree = "<group>"; };
@@ -59,6 +61,7 @@
 				848CC4501F1246E5002D037C /* AppDelegate.swift */,
 				848CC4621F124850002D037C /* RestaurantTableViewController.swift */,
 				848CC4641F1256A0002D037C /* RestaurantTableViewCell.swift */,
+				405F550A1F1F3CBC0053EC40 /* RestaurantDetailViewController.swift */,
 				848CC4541F1246E5002D037C /* Main.storyboard */,
 				848CC4571F1246E5002D037C /* Assets.xcassets */,
 				848CC4591F1246E5002D037C /* LaunchScreen.storyboard */,
@@ -141,6 +144,7 @@
 			files = (
 				848CC4631F124850002D037C /* RestaurantTableViewController.swift in Sources */,
 				848CC4651F1256A0002D037C /* RestaurantTableViewCell.swift in Sources */,
+				405F550B1F1F3CBC0053EC40 /* RestaurantDetailViewController.swift in Sources */,
 				848CC4511F1246E5002D037C /* AppDelegate.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
@@ -303,6 +307,7 @@
 				848CC4611F1246E5002D037C /* Release */,
 			);
 			defaultConfigurationIsVisible = 0;
+			defaultConfigurationName = Release;
 		};
 /* End XCConfigurationList section */
 	};
