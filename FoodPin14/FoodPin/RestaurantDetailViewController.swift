@@ -26,13 +26,22 @@ class RestaurantDetailViewController: UIViewController, UITableViewDataSource, U
         
         restaurantImageView.image = UIImage(named: restaurant.image)
         
-        tableView.backgroundColor = UIColor(red: 10/255, green: 140/255, blue: 240/255, alpha: 0.2)
+        tableView.backgroundColor = UIColor(red: 240/255, green: 240/255, blue: 240/255, alpha: 0.2)
         tableView.tableFooterView = UIView(frame: CGRect.zero)
-        tableView.separatorColor = UIColor(red: 0/255, green: 40/255, blue: 140/255, alpha: 0.8)
+        tableView.separatorColor = UIColor(red: 240/255, green: 240/255, blue: 240/255, alpha: 0.8)
         
         //Add restaurnt name in detail view title
         title = restaurant.name
+        navigationController?.hidesBarsOnSwipe = false
     }
+    
+    override func viewWillAppear(_ animated: Bool) {
+        super.viewWillAppear(animated)
+        
+        navigationController?.hidesBarsOnSwipe = false
+        navigationController?.setNavigationBarHidden(false, animated: true)
+    }
+    
     
     override func didReceiveMemoryWarning() {
         super.didReceiveMemoryWarning()
