@@ -7,6 +7,7 @@
 	objects = {
 
 /* Begin PBXBuildFile section */
+		844CA32F1F274667002D2C44 /* MapKit.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 844CA32E1F274667002D2C44 /* MapKit.framework */; };
 		F4177B581D586F3700822293 /* ReviewViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = F4177B571D586F3700822293 /* ReviewViewController.swift */; };
 		F440CDD21D3F4DB2000FB65E /* RestaurantDetailViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = F440CDD11D3F4DB2000FB65E /* RestaurantDetailViewController.swift */; };
 		F464A2F21D49A8C40023E159 /* RestaurantDetailTableViewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = F464A2F11D49A8C40023E159 /* RestaurantDetailTableViewCell.swift */; };
@@ -20,6 +21,7 @@
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
+		844CA32E1F274667002D2C44 /* MapKit.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = MapKit.framework; path = System/Library/Frameworks/MapKit.framework; sourceTree = SDKROOT; };
 		F4177B571D586F3700822293 /* ReviewViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = ReviewViewController.swift; sourceTree = "<group>"; };
 		F440CDD11D3F4DB2000FB65E /* RestaurantDetailViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = RestaurantDetailViewController.swift; sourceTree = "<group>"; };
 		F464A2F11D49A8C40023E159 /* RestaurantDetailTableViewCell.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = RestaurantDetailTableViewCell.swift; sourceTree = "<group>"; };
@@ -39,17 +41,27 @@
 			isa = PBXFrameworksBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				844CA32F1F274667002D2C44 /* MapKit.framework in Frameworks */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
 /* End PBXFrameworksBuildPhase section */
 
 /* Begin PBXGroup section */
+		844CA32D1F274667002D2C44 /* Frameworks */ = {
+			isa = PBXGroup;
+			children = (
+				844CA32E1F274667002D2C44 /* MapKit.framework */,
+			);
+			name = Frameworks;
+			sourceTree = "<group>";
+		};
 		F4D336B51D2E4309003010DD = {
 			isa = PBXGroup;
 			children = (
 				F4D336C01D2E4309003010DD /* FoodPin */,
 				F4D336BF1D2E4309003010DD /* Products */,
+				844CA32D1F274667002D2C44 /* Frameworks */,
 			);
 			sourceTree = "<group>";
 		};
@@ -112,6 +124,11 @@
 					F4D336BD1D2E4309003010DD = {
 						CreatedOnToolsVersion = 8.0;
 						ProvisioningStyle = Automatic;
+						SystemCapabilities = {
+							com.apple.Maps.iOS = {
+								enabled = 1;
+							};
+						};
 					};
 				};
 			};
