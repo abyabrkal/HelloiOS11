@@ -7,11 +7,14 @@
 //
 
 import UIKit
+import MapKit
 
 class RestaurantDetailViewController: UIViewController, UITableViewDataSource, UITableViewDelegate {
     
     @IBOutlet var restaurantImageView: UIImageView!
     @IBOutlet var tableView:UITableView!
+    @IBOutlet var mapView: MKMapView!
+    
     
     var restaurant:Restaurant!
 
@@ -31,6 +34,44 @@ class RestaurantDetailViewController: UIViewController, UITableViewDataSource, U
         // Enable self sizing cells
         tableView.estimatedRowHeight = 36.0
         tableView.rowHeight = UITableViewAutomaticDimension
+        
+        // Tap Gesture for Map
+        let tapGestureRecognizer = UITapGestureRecognizer(target: self, action: #selector(showMap))
+        mapView.addGestureRecognizer(tapGestureRecognizer)
+        
+        //Map annotations - markers
+        let geoCoder = CLGeocoder()
+        geoCoder.geocodeAddressString(restaurant.location, completionHandler: {
+            placemarks, error in
+            if let error = error {
+                print(error)
+                return
+            }
+            
+            if let placemarks = placemarks {
+                
+                // Get the first placemark
+                let placemark = placemarks[0]
+                
+                // Add annotation
+                let annotation = MKPointAnnotation()
+                
+                if let location = placemark.location {
+                    
+                    // Display the annotation
+                    annotation.coordinate = location.coordinate
+                    self.mapView.addAnnotation(annotation)
+                    
+                    // Set the zoom level
+                    let region = MKCoordinateRegionMakeWithDistance(annotation.coordinate, 250, 250)
+                    self.mapView.setRegion(region, animated: false)
+                }
+            }
+        })
+        
+        mapView.showsScale = true
+        mapView.showsCompass = true
+        mapView.showsTraffic = true
     }
     
     override func viewWillAppear(_ animated: Bool) {
@@ -45,7 +86,12 @@ class RestaurantDetailViewController: UIViewController, UITableViewDataSource, U
         // Dispose of any resources that can be recreated.
     }
     
-
+    // Show map on Tap
+    func showMap(){
+        performSegue(withIdentifier: "showMap", sender: self)
+    }
+    
+    
     // MARK: - UITableView
     
     func tableView(_ tableView: UITableView, numberOfRowsInSection section: Int) -> Int {
@@ -109,7 +155,37 @@ class RestaurantDetailViewController: UIViewController, UITableViewDataSource, U
         if segue.identifier == "showReview" {
             let destinationController = segue.destination as! ReviewViewController
             destinationController.restaurant = restaurant
+        }  else if segue.identifier == "showMap" {
+            let destinationController = segue.destination as! MapViewController
+            destinationController.restaurant = restaurant
         }
     }
+    
+    
+    func mapView(_ mapView: MKMapView, viewFor annotation: MKAnnotation) -> MKAnnotationView? {
+        
+        let identifier = "MyPin"
+        
+        if annotation.isKind(of: MKUserLocation.self){
+            return nil
+        }
+        
+        //Reuse the annotationif possible
+        var annotationView: MKPinAnnotationView? = mapView.dequeueReusableAnnotationView(withIdentifier: identifier) as? MKPinAnnotationView
+        
+        if annotationView == nil {
+            annotationView = MKPinAnnotationView(annotation: annotation, reuseIdentifier: identifier)
+            annotationView?.canShowCallout = true
+        }
+        
+        let leftIconView = UIImageView(frame: CGRect.init(x: 0, y: 0, width: 53, height: 53))
+        
+        leftIconView.image = UIImage(named: restaurant.image)
+        annotationView?.leftCalloutAccessoryView = leftIconView
+        
+        return annotationView
+    }
+    
+    
     
 }

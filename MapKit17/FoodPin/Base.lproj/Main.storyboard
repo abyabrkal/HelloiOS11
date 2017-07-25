@@ -190,6 +190,7 @@
                         </constraints>
                     </view>
                     <connections>
+                        <outlet property="mapView" destination="2iY-nY-3hv" id="6aX-fn-1cf"/>
                         <outlet property="restaurantImageView" destination="gCL-5b-Qr0" id="Dk1-D1-mWD"/>
                         <outlet property="tableView" destination="WSL-5L-m2R" id="dgy-47-pwW"/>
                         <segue destination="y0n-9p-T2f" kind="show" identifier="showMap" id="XAV-19-Nbd"/>
@@ -320,10 +321,10 @@
             </objects>
             <point key="canvasLocation" x="2909.5999999999999" y="37.331334332833585"/>
         </scene>
-        <!--View Controller-->
+        <!--Map View Controller-->
         <scene sceneID="N5y-tm-hwx">
             <objects>
-                <viewController id="y0n-9p-T2f" sceneMemberID="viewController">
+                <viewController id="y0n-9p-T2f" customClass="MapViewController" customModule="FoodPin" customModuleProvider="target" sceneMemberID="viewController">
                     <layoutGuides>
                         <viewControllerLayoutGuide type="top" id="rnm-MU-DWO"/>
                         <viewControllerLayoutGuide type="bottom" id="u9a-2R-mVt"/>
@@ -339,6 +340,9 @@
                         </subviews>
                         <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
                     </view>
+                    <connections>
+                        <outlet property="mapView" destination="JOa-Jj-nQf" id="v8b-6s-7iK"/>
+                    </connections>
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="aup-vK-taq" userLabel="First Responder" sceneMemberID="firstResponder"/>
             </objects>
