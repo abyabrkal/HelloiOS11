@@ -42,6 +42,12 @@ class RestaurantTableViewController: UITableViewController {
         navigationItem.backBarButtonItem = UIBarButtonItem(title: "", style: .plain, target: nil, action: nil)
         
         navigationController?.hidesBarsOnSwipe = true
+        
+        //Self sizing cells
+        tableView.estimatedRowHeight = 80.0
+        tableView.rowHeight = UITableViewAutomaticDimension
+        
+        
     }
     
     override func viewWillAppear(_ animated: Bool) {
