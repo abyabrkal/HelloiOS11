@@ -46,7 +46,28 @@ class RestaurantDetailViewController: UIViewController, UITableViewDataSource, U
         // Dispose of any resources that can be recreated.
     }
     
-
+    @IBAction func close(segue: UIStoryboardSegue){
+        
+    }
+    
+    @IBAction func ratingButtonTapped(segue: UIStoryboardSegue){
+        
+        if let rating = segue.identifier {
+            
+            restaurant.isVisited = true
+            
+            switch rating {
+                case "great" : restaurant.rating = "Absolutely love it! Must try"
+                case "good" : restaurant.rating = "Pretty good"
+                case "dislike" : restaurant.rating = "I dont like it."
+                default: break
+            }
+        }
+        
+        tableView.reloadData()
+    }
+    
+    
     // MARK: - UITableView
     
     func tableView(_ tableView: UITableView, numberOfRowsInSection section: Int) -> Int {
@@ -72,7 +93,7 @@ class RestaurantDetailViewController: UIViewController, UITableViewDataSource, U
             cell.valueLabel.text = restaurant.phone
         case 4:
             cell.fieldLabel.text = "Been here"
-            cell.valueLabel.text = (restaurant.isVisited) ? "Yes, I've been here before" : "No"
+            cell.valueLabel.text = (restaurant.isVisited) ? "Yes, I've been here before \(restaurant.rating)" : "No"
         default:
             cell.fieldLabel.text = ""
             cell.valueLabel.text = ""
