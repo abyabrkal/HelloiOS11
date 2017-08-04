@@ -15,12 +15,12 @@ class RestaurantDetailViewController: UIViewController, UITableViewDataSource, U
     @IBOutlet var tableView:UITableView!
     @IBOutlet var mapView: MKMapView!
     
-    var restaurant:Restaurant!
+    var restaurant:RestaurantMO!
 
     override func viewDidLoad() {
         super.viewDidLoad()
         
-        restaurantImageView.image = UIImage(named: restaurant.image)
+        restaurantImageView.image = UIImage(data: restaurant.image as! Data)
         
         tableView.backgroundColor = UIColor(red: 240.0/255.0, green: 240.0/255.0, blue: 240.0/255.0, alpha: 0.2)
         tableView.separatorColor = UIColor(red: 240.0/255.0, green: 240.0/255.0, blue: 240.0/255.0, alpha: 0.8)
@@ -39,7 +39,7 @@ class RestaurantDetailViewController: UIViewController, UITableViewDataSource, U
         
         // Pin the restaurant location on map
         let geoCoder = CLGeocoder()
-        geoCoder.geocodeAddressString(restaurant.location, completionHandler: { placemarks, error in
+        geoCoder.geocodeAddressString(restaurant.location!, completionHandler: { placemarks, error in
             if let error = error {
                 print(error)
                 return
@@ -101,10 +101,10 @@ class RestaurantDetailViewController: UIViewController, UITableViewDataSource, U
             cell.valueLabel.text = restaurant.type
         case 2:
             cell.fieldLabel.text = "Location"
-            cell.valueLabel.text = restaurant.location
+            cell.valueLabel.text = restaurant.location!
         case 3:
             cell.fieldLabel.text = "Phone"
-            cell.valueLabel.text = restaurant.phone
+            cell.valueLabel.text = restaurant.phone!
         case 4:
             cell.fieldLabel.text = "Been here"
             cell.valueLabel.text = (restaurant.isVisited) ? "Yes, I've been here before. \(restaurant.rating)" : "No"

@@ -15,7 +15,8 @@ class ReviewViewController: UIViewController {
     
     // For exercise #1
     @IBOutlet var restaurantImageView: UIImageView!
-    var restaurant:Restaurant?
+    
+    var restaurant:RestaurantMO?
     
     // For exercise #2
     @IBOutlet var closeButton: UIButton!
@@ -25,7 +26,7 @@ class ReviewViewController: UIViewController {
 
         // Solution to Exercise #1 - Start here
         if let restaurant = restaurant {
-            restaurantImageView.image = UIImage(named: restaurant.image)
+            restaurantImageView.image = UIImage(data: restaurant.image as! Data)
         }
         // Solution to Exercise #1 - End here
         
