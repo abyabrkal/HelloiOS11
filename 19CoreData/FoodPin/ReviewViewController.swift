@@ -15,7 +15,6 @@ class ReviewViewController: UIViewController {
     
     // For exercise #1
     @IBOutlet var restaurantImageView: UIImageView!
-    
     var restaurant:RestaurantMO?
     
     // For exercise #2
@@ -25,8 +24,8 @@ class ReviewViewController: UIViewController {
         super.viewDidLoad()
 
         // Solution to Exercise #1 - Start here
-        if let restaurant = restaurant {
-            restaurantImageView.image = UIImage(data: restaurant.image as! Data)
+        if let restaurant = restaurant, let restaurantImage = restaurant.image {
+            restaurantImageView.image = UIImage(data: restaurantImage as Data)
         }
         // Solution to Exercise #1 - End here
         
