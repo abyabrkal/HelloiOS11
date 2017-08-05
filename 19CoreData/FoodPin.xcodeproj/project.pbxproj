@@ -7,6 +7,8 @@
 	objects = {
 
 /* Begin PBXBuildFile section */
+		40907EDB1F35A65900B24748 /* WalkthroughContentViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 40907EDA1F35A65900B24748 /* WalkthroughContentViewController.swift */; };
+		40907EDD1F35A75C00B24748 /* WalkthroughPageViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 40907EDC1F35A75C00B24748 /* WalkthroughPageViewController.swift */; };
 		F405E4C81D5C09500042A934 /* MapKit.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = F405E4C71D5C09500042A934 /* MapKit.framework */; };
 		F405E4CA1D5C6EB20042A934 /* MapViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = F405E4C91D5C6EB20042A934 /* MapViewController.swift */; };
 		F4177B581D586F3700822293 /* ReviewViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = F4177B571D586F3700822293 /* ReviewViewController.swift */; };
@@ -24,6 +26,8 @@
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
+		40907EDA1F35A65900B24748 /* WalkthroughContentViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = WalkthroughContentViewController.swift; sourceTree = "<group>"; };
+		40907EDC1F35A75C00B24748 /* WalkthroughPageViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = WalkthroughPageViewController.swift; sourceTree = "<group>"; };
 		F405E4C71D5C09500042A934 /* MapKit.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = MapKit.framework; path = System/Library/Frameworks/MapKit.framework; sourceTree = SDKROOT; };
 		F405E4C91D5C6EB20042A934 /* MapViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = MapViewController.swift; sourceTree = "<group>"; };
 		F4177B571D586F3700822293 /* ReviewViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = ReviewViewController.swift; sourceTree = "<group>"; };
@@ -96,6 +100,8 @@
 				F405E4C91D5C6EB20042A934 /* MapViewController.swift */,
 				F41DE0631D5DA1F900267A53 /* AddRestaurantController.swift */,
 				F4D2AD701D630E0600EA4892 /* FoodPin.xcdatamodeld */,
+				40907EDA1F35A65900B24748 /* WalkthroughContentViewController.swift */,
+				40907EDC1F35A75C00B24748 /* WalkthroughPageViewController.swift */,
 			);
 			path = FoodPin;
 			sourceTree = "<group>";
@@ -132,6 +138,7 @@
 				TargetAttributes = {
 					F4D336BD1D2E4309003010DD = {
 						CreatedOnToolsVersion = 8.0;
+						DevelopmentTeam = UDV3RDCC6V;
 						ProvisioningStyle = Automatic;
 						SystemCapabilities = {
 							com.apple.Maps.iOS = {
@@ -182,6 +189,8 @@
 				F4D336D41D2E45AB003010DD /* RestaurantTableViewController.swift in Sources */,
 				F4177B581D586F3700822293 /* ReviewViewController.swift in Sources */,
 				F4E162B71D33879D00B23D25 /* RestaurantTableViewCell.swift in Sources */,
+				40907EDB1F35A65900B24748 /* WalkthroughContentViewController.swift in Sources */,
+				40907EDD1F35A75C00B24748 /* WalkthroughPageViewController.swift in Sources */,
 				F4D2AD721D630E0600EA4892 /* FoodPin.xcdatamodeld in Sources */,
 				F464A2F21D49A8C40023E159 /* RestaurantDetailTableViewCell.swift in Sources */,
 				F440CDD21D3F4DB2000FB65E /* RestaurantDetailViewController.swift in Sources */,
@@ -307,11 +316,11 @@
 			isa = XCBuildConfiguration;
 			buildSettings = {
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
-				DEVELOPMENT_TEAM = "";
+				DEVELOPMENT_TEAM = UDV3RDCC6V;
 				INFOPLIST_FILE = FoodPin/Info.plist;
 				IPHONEOS_DEPLOYMENT_TARGET = 10.0;
 				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks";
-				PRODUCT_BUNDLE_IDENTIFIER = com.appcoda.FoodPin;
+				PRODUCT_BUNDLE_IDENTIFIER = com.abkal.FoodPin;
 				PRODUCT_NAME = "$(TARGET_NAME)";
 				SWIFT_VERSION = 3.0;
 			};
@@ -321,11 +330,11 @@
 			isa = XCBuildConfiguration;
 			buildSettings = {
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
-				DEVELOPMENT_TEAM = "";
+				DEVELOPMENT_TEAM = UDV3RDCC6V;
 				INFOPLIST_FILE = FoodPin/Info.plist;
 				IPHONEOS_DEPLOYMENT_TARGET = 10.0;
 				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks";
-				PRODUCT_BUNDLE_IDENTIFIER = com.appcoda.FoodPin;
+				PRODUCT_BUNDLE_IDENTIFIER = com.abkal.FoodPin;
 				PRODUCT_NAME = "$(TARGET_NAME)";
 				SWIFT_VERSION = 3.0;
 			};
